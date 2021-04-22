@@ -19,6 +19,8 @@ public class 게임플레이5 {
         Scanner 입력값 = new Scanner(System.in);
 
 
+        System.out.println("야호깃연동성공?");
+
 
         System.out.println( "\n\n\n\n" +
 
