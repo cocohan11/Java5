@@ -1,6 +1,6 @@
 package 생명체;
 
-import 생명체.좀비.좀비;
+import 스레드.button;
 
 public class 생명체 {
 
@@ -27,11 +27,17 @@ public class 생명체 {
     public String 멘트10;
     public String 멘트11;
     public int 슬립속도;
+    button bt;
 
 
     //------------------------------ 생성자 ------------------------------
 
     public 생명체(){};  //디폴트 생성자 추가 : 다른 생성자 전부 안 끌고와도 됨
+
+    public 생명체(button bt){
+
+        this.bt = bt;
+    }
 
     public 생명체(String 이름, String 상대이름, int 레벨, int 공격력, int 남은체력, int 기존체력, int 데미지, int 경험치) {
 
@@ -111,7 +117,7 @@ public class 생명체 {
 
 
 
-    public void 멘트sleep_짧() {
+    public void 멘트sleep_짧(int 슬립속도,String 멘트1,String 멘트2,String 멘트3,String 멘트4, String 멘트5) {
         //배열, Thread.sleep 사용
 
         String[] 배열 = {
@@ -138,7 +144,8 @@ public class 생명체 {
 
 
 
-    public void 멘트sleep() {
+    public void 멘트sleep(int 슬립속도, String 멘트1, String 멘트2,String 멘트3,String 멘트4,String 멘트5,String 멘트6,String 멘트7,String 멘트8,
+                        String 멘트9,String 멘트10, button bt) {
         //배열, Thread.sleep 사용
 
         String[] 배열 = {
@@ -154,16 +161,32 @@ public class 생명체 {
                 멘트10,
         };
 
-        for (int i = 0; i < 배열.length; i++) {
-            //멘트를 출력한다.
-            System.out.print(배열[i]);
-            try {
-                //0.3초 간 중지한다.
-                Thread.sleep(슬립속도);
-            } catch (Exception e) {
+            for (int i = 0; i < 배열.length; i++) {
+
+                //멘트를 출력한다.
+                System.out.print(배열[i]);
+
+                //내부에서 한 번 판단하게 해보자.
+                if (bt.엔터skip.equals("")) {
+                    슬립속도 = 0;
+                }
+
+                try {
+                    //0.3초 간 중지한다.
+                    Thread.sleep(슬립속도);
+                } catch (Exception e) {
+                }
             }
 
-        } //배열, Thread.sleep 사용
+
+         //배열, Thread.sleep 사용
+
+
+
+
+/*
+        System.out.print("@");
+*/
 
     }
 

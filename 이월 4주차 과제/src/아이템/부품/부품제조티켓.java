@@ -14,8 +14,8 @@ public class 부품제조티켓 extends 아이템{
 
     // ---------------------- 생성자 ------------------------
     public 부품제조티켓(){};
-    public 부품제조티켓(String 품명, int 가격, int 갯수){
-        super(품명,가격,갯수);
+    public 부품제조티켓(String 품명, int 가격, int 갯수, String 넘버){
+        super(품명,가격,갯수, 넘버);
 
 
     };

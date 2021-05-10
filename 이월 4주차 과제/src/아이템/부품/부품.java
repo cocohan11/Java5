@@ -6,7 +6,8 @@ public class 부품 extends 아이템 {
 
     // ---------------------- 필드 ------------------------
 
-    String 숫자;
+    부품 부품;
+    /*String 숫자;*/
     public int 설계갯수;
 
 
@@ -16,41 +17,41 @@ public class 부품 extends 아이템 {
 
     ; // 디폴트생성자 직접 추가
 
-    public 부품(String 품명, int 가격, int 갯수, String 숫자, int 설계갯수) {
-        super(품명, 가격, 갯수);
+    public 부품(String 품명, int 가격, int 갯수, String 넘버, int 설계갯수) {
+        super(품명, 가격, 갯수, 넘버);
 
-        this.숫자 = 숫자;
+        /*this.숫자 = 숫자;*/
         this.설계갯수 = 설계갯수;
     }
 
 
 
+/*
     // ---------------------- 메소드 ------------------------
 
 
     // ------------------------ 전당포 ----------------------------
     //--------------- 구매 -----------------------------
 
-    // 전당포 - 구매 : 전당포 물품 설명 : 2가지
+  // 전당포 - 구매 : 전당포 물품 설명 : 2가지
     public void 전당포_설명(String 템명, int 가격) {
 
-        System.out.println(템명 + "\n"
-                + "          가격 : " + 가격 + "원\n");
+        super.전당포_설명(템명, 가격);
     }
 
-    //지하 전당포_구매 값 넣기
-    public void 전당포_구매(부품 부품) {
 
-        부품.전당포_설명(품명, 가격);
+
+    //지하 전당포_구매 값 넣기
+    public void 전당포_구매(부품 부품) {  //저 변수를 사용 안 해도 잘 나오네? 뒤에 부품 변수.
+
+        super.전당포_구매();
 
     }
 
     // 전당포 - 구매 : 내 배낭 물품 설명 : 3가지
     public void 배낭_설명_별(String 템명, int 가격, int 갯수) {
 
-        System.out.println("* "+템명 + "\n"
-                + "                                 가격 : " + 가격 + "원\n"
-                + "                                 갯수 : " + 갯수 + "개\n");
+        super.배낭_설명_별(템명,가격,갯수);
     }
 
 
@@ -58,25 +59,23 @@ public class 부품 extends 아이템 {
     //지하 전당포_구매 값 넣기
     public void 배낭_구매(부품 부품) {
 
-        부품.배낭_설명_별(품명, 가격, 갯수);
+        super.배낭_구매();
 
     }
 
     //--------------- 판매 -----------------------------
 
     //템명 앞에 숫자붙일 수 있음
-    public void 배낭_판매_숫자(String 템명, int 가격, int 갯수, String 숫자) {
+    public void 배낭_판매_숫자(String 템명, int 가격, int 갯수, String 넘버) {
 
-        System.out.println(숫자+템명 + "\n"
-                + "                                 가격 : " + 가격 + "원\n"
-                + "                                 갯수 : " + 갯수 + "개\n");
+        super.배낭_판매_숫자(템명,가격,갯수,넘버);
     }
 
 
     //지하 전당포_구매 값 넣기
     public void 배낭_판매(부품 부품) {
 
-        부품.배낭_판매_숫자(품명, 가격, 갯수, 숫자);
+        super.배낭_판매();
 
     }
 
@@ -86,34 +85,26 @@ public class 부품 extends 아이템 {
 
     //지하 전당포_판매(인벤)
     public void 배낭_소유부품_별(부품 부품) {
-        if (갯수 > 0) {
-
-            System.out.print("                       "); 배낭_구매(부품);
-
-        }
+        super.배낭_소유부품_별();
     }
 
 
     //지하 전당포_판매(인벤)
     public void 배낭_소유부품_숫자(부품 부품) {
-        if (갯수 > 0) {
-
-            System.out.print("                       "); 배낭_판매(부품);
-
-        }
+        super.배낭_소유부품_숫자();
     }
 
     //---------------- 사칙연산 ---------------------------
 
-    public int 소지금감소(int 소지골드) {
-
-        return 소지골드 - 가격;
-    }
-
-    public int 소지금증가(int 소지골드) {
-
-        return 소지골드 + 가격;
-    }
+//    public int 소지금감소(int 소지골드) {
+//        super.소지금감소(소지골드);
+//        return 소지골드;
+//    }  //리턴상속받으니까 안되네. 어쩌지..
+//
+//    public int 소지금증가(int 소지골드) {
+//
+//        return 소지골드 + 가격;
+//    }
 
 
 
@@ -150,21 +141,22 @@ public class 부품 extends 아이템 {
                 "            " + 소지골드 + "원\n" +
                 "   ╚══════════════════════╝");
     }
+*/
 
 
     // ---------------------------- 설계도 -------------------------------------
 
 
-    public void 설계도_설명(String 품명, int 갯수) {
+    public void 설계도_설명(String 품명, int 갯수, int 설계갯수) {
 
         System.out.println("   "+품명+"  "+갯수+"/"+설계갯수+"개");
 
 
     }
 
-    public void 설계도(부품 부품) {
+    public void 설계도(부품 a) {
 
-        설계도_설명(품명, 갯수);
+        설계도_설명(a.품명, a.갯수, a.설계갯수);
 
     }
 
@@ -172,7 +164,7 @@ public class 부품 extends 아이템 {
     // ------------------------------- 내 배낭 --------------------------------
 
 
-
+/*
     //템명 앞에 숫자붙일 수 있음
     public void 배낭오픈_별(String 템명, int 가격, int 갯수) {
 
@@ -199,9 +191,63 @@ public class 부품 extends 아이템 {
 
         }
     }
+*/
 
 
+    //-------------- 전투 후 보상 -----------
 
+    public void 랜덤부품(부품 a, 부품 b, 부품 c) {
+
+        if (Math.random() <= 0.8) {  //80프로확률로 아이템 드랍
+
+/*
+            System.out.println("랜덤부품 획득!");
+*/
+
+            if (Math.random() <= 0.4) {
+
+                System.out.println(
+                        "                                                                  ╔═══════════════╗");
+                System.out.println(
+                        "                                                                     랜덤부품 획득!\n");
+                System.out.println(
+                        "                                                                     + 배터리\n");
+                System.out.println(
+                        "                                                                  ╚═══════════════╝");
+                a.갯수 += 1;
+
+            } else if (Math.random() <= 0.3){
+
+
+                System.out.println(
+                        "                                                                  ╔═══════════════╗");
+                System.out.println(
+                        "                                                                     랜덤부품 획득!\n");
+                System.out.println(
+                        "                                                                     + 라디오\n");
+                System.out.println(
+                        "                                                                  ╚═══════════════╝");
+                b.갯수 += 1;
+
+            } else {  //20%
+
+                System.out.println(
+                        "                                                                  ╔═══════════════╗");
+                System.out.println(
+                        "                                                                     랜덤부품 획득!\n");
+                System.out.println(
+                        "                                                                     + 마이크\n");
+                System.out.println(
+                        "                                                                  ╚═══════════════╝");
+                c.갯수 += 1;
+
+            }
+
+
+        } else {  //20프로 확률로 아이템 드랍실패
+            System.out.println("부품 획득 실패");  //발표때 숨기기
+        }
+    }
 
 
 
