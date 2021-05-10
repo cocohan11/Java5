@@ -8,7 +8,7 @@ public class 활 extends 무기 {
 
     // 생성자
     활(){}; // 디폴트생성자 직접 추가
-
+/*
     활(String 품명, int 가격, int 공격력증가, int 추가공격력, int 갯수) {
         super(품명, 가격, 공격력증가, 갯수);
 
@@ -19,7 +19,7 @@ public class 활 extends 무기 {
         this.추가공격력 = 추가공격력;  //상속받지 못한 속성을 생성자에 추가해줌
         this.추가공격력 = 50;
 
-    }
+    }*/
 
 
     // 메소드

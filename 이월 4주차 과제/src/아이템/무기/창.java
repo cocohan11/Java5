@@ -14,10 +14,10 @@ public class 창 extends 무기{
         this.공격력증가 = 100;
     }
 
-    public 창(String 품명, int 가격, int 공격력증가, int 갯수) {
+/*    public 창(String 품명, int 가격, int 공격력증가, int 갯수) {
         super(품명, 가격, 공격력증가, 갯수);
 
-    }
+    }*/
 
 
     // 메소드

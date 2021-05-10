@@ -1,3 +1,5 @@
+/*
+
 import 생명체.생명체;
 import 생명체.생존자.생존자;
 import 생명체.좀비.좀비;
@@ -19,7 +21,6 @@ public class 게임플레이5 {
         Scanner 입력값 = new Scanner(System.in);
 
 
-        System.out.println("야호깃연동성공?");
 
 
         System.out.println( "\n\n\n\n" +
@@ -121,7 +122,7 @@ public class 게임플레이5 {
         생존자값.스탯창(당신이름);
         System.out.println();
 
-    System.out.println("1.좀비사냥\n2.상태확인\n3.지하 전당포\n4.내 배낭\n5.부품조합설계도\n6.스토리 및 도움말\n");
+        System.out.println("1.좀비사냥\n2.상태확인\n3.지하 전당포\n4.내 배낭\n5.부품조합설계도\n6.스토리 및 도움말\n");
 
 
         // 지옥의 반복문 안에서 계속 도는 형태로 만들거야. 탈출 안 시키겠네.
@@ -214,12 +215,32 @@ public class 게임플레이5 {
 
 
 
-                                            // ------------------------------- 1.일반공격 -----------------------------------
+                                    // ------------------------------- 1.일반공격 -----------------------------------
 
 
 
 
+                                    //lose하면 여기로 돌아와서 press any number해줘야됨.. 이거 싫어서 if로 더 감쌈.
+
+                                    System.out.println("5555생존자 체력: " + 생존자값.남은체력);
+
+
+
+//press any number하기싫어서 코드 짜봤는데 실패.
+/*
+                                    System.out.println("4321");
+
+                                    //press any number을 안 해도 빠져나오고싶어.
+                                    if (생존자값.남은체력 - 오렌지좀비값.공격력 <= 0) {
+                                        System.out.println("press any number 싫어. 탈출");
+                                        break;
+
+                                    } else if (생존자값.남은체력 - 오렌지좀비값.공격력 > 0) {*/
+
+
+/*
                                         int 사냥 = 입력값.nextInt();
+
 
 
 
@@ -252,11 +273,17 @@ public class 게임플레이5 {
                                             // ------------------------------- 2.아이템 공격 ---------------------------------
                                         } else if (사냥 == 2) {}// ~아이템공격
 
+                                        }
+
+
+
 
                                     }  //~while
 
 
                                         /*                                    }//~if*/
+
+/*
                                         System.out.println("전투 while빠져나옴");
 
 
@@ -327,7 +354,9 @@ public class 게임플레이5 {
                                         }
                                         //생존자가 죽어도 공격하는 문제: 스캐너에서 빠져나오게 함.
 
-                                    }
+                                   /* }*/
+
+/*
                         } else if (싸움_도망 == 0) {
                             System.out.println("좀비에게 들키지 않고 살금살금 도망갑니다.\n");  //확률로 해도 재밌겠다.
 
@@ -690,7 +719,7 @@ public class 게임플레이5 {
 
               /*  System.out.println("Tip");*/
 
-
+/*
                 while (true) {
 
                     int 이전 = 입력값.nextInt();   //값받음
@@ -730,3 +759,4 @@ public class 게임플레이5 {
     }
 
 }
+*/
