@@ -2,8 +2,11 @@ package 스레드;
 
 public class button {
 
+<<<<<<< HEAD
     //값 넣고 불러오기 위해 만든 클래스
 
+=======
+>>>>>>> origin/master
     public boolean 배경onOff;
     public boolean 배경next;
     public boolean 키보드onOff;
